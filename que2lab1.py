@@ -26,7 +26,13 @@ def readfile(file):
         probcharcount[i] = charcount[i] / sum
 
     print(probcharcount)
-    print()        
+    print()
+    entropy=0
+    import math
+    for k in probcharcount.values():
+        entropy=entropy+k*math.log2(k)
+    print(-entropy)        
+                
     f.close()
     
     
