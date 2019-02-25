@@ -1,0 +1,24 @@
+
+
+
+sort() Parameters
+By default, sort() doesn't require any extra parameters. However, it has two optional parameters:
+
+reverse - If true, the sorted list is reversed (or sorted in Descending order)
+key - function that serves as a key for the sort comparison
+
+
+
+
+Sorting dictionary:
+
+
+# charcount={ch : 0 for ch in [chr(i) for i in range(97, 123)]}
+Like our dictionary is this (say):
+{'a': 63844, 'b': 11421, 'c': 19349, 'd': 37972, 'e': 102429, 'f': 17260,
+'g': 15506, 'h': 46393,'i': 57146, 'j': 1322, 'k': 6159, 'l': 32947, 
+'m': 22636, 'n': 55278, 'o': 61867, 'p': 12601, 'q': 957, 'r': 48538, 
+'s': 50845, 't': 68576, 'u': 23988, 'v': 7736, 'w': 18974, 'x': 1305, 'y': 17616, 'z': 331}
+
+So we want to sort the arrays on the basis of who has highest count first and so on , So this can be achieved by below code:
+reqdlist=sorted(charcount, key = lambda i : charcount[i],reverse=True)

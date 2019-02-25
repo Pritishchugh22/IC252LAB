@@ -16,6 +16,7 @@ def readfile(file):
             pass
     reqdlist=sorted(charcount, key = lambda i : charcount[i],reverse=True)[0:10]
     print(reqdlist)
+    print(charcount)
     print()
     sum=0
     for val in charcount.values():
