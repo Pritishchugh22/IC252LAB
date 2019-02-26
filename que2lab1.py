@@ -18,9 +18,9 @@ def readfile(file):
     print(reqdlist)
     print(charcount)
     print()
-    sum=0
-    for val in charcount.values():
-        sum=sum+val
+    sum=sum(charcount.values())
+    # for val in charcount.values():
+    #     sum=sum+val
     probcharcount={ch : 0 for ch in [chr(i) for i in range(97, 123)]}
     
     for i in probcharcount:
