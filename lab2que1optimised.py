@@ -13,9 +13,9 @@ if( filename=='A'):
 else:
     f="/home/tushar/Desktop/IC252/ic252_lab1_data/largeTextFiles/fileB_jane_eyre.txt"    
 
-f=open(f,"r")
+data=open(f,"r")
 charcount={ch : 0 for ch in [chr(i) for i in range(97, 123)]}
-for char in f.read():
+for char in data.read():
     try:
         charcount[char.lower()]+=1
     except:
@@ -33,13 +33,13 @@ y = input('Enter y:').lower()
 
 print('Computing the prior probability of x and prior probability of y')
 print('---------')
-print('Prior probability of',x,':',round(probcharcount[x],3))
-print('Prior probability of ',y,':',round(probcharcount[y],3))
+print('Prior probability of',x,':',round(probcharcount[x],4))
+print('Prior probability of ',y,':',round(probcharcount[y],4))
 print('---------')
 
 file = ''
-
-for i in f.read():
+data=open(f,"r")
+for i in data.read():
     try:
         i = i.lower()
         if 97 <= ord(i) <= 122:
@@ -58,6 +58,7 @@ if file[-1] == x:
     
 total_yx_bigram = file.count(y+x)
 total_xy_bigram = file.count(x+y)
-print('Conditional probability P(',x,'|',y,') = ',total_yx_bigram/total_y_bigram)
-print('Conditional probability P(',x,'|',y,') = ', total_xy_bigram/total_x_bigram)
+print('Conditional probability P(',x,'|',y,') = ',round(total_yx_bigram/total_y_bigram,4))
+print('Conditional probability P(',y,'|',x,') = ', round(total_xy_bigram/total_x_bigram,4))
 print('---------')
+#%%
