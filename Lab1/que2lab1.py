@@ -9,6 +9,8 @@ Created on Sun Feb 24 16:41:07 2019
 def readfile(file):
     f=open(file,"r")
     charcount={ch : 0 for ch in [chr(i) for i in range(97, 123)]}
+    probcharcount={ch : 0 for ch in [chr(i) for i in range(97, 123)]}
+    
     for char in f.read():
         try:
             charcount[char.lower()]+=1
@@ -21,7 +23,6 @@ def readfile(file):
     sum=sum(charcount.values())
     # for val in charcount.values():
     #     sum=sum+val
-    probcharcount={ch : 0 for ch in [chr(i) for i in range(97, 123)]}
     
     for i in probcharcount:
         probcharcount[i] = charcount[i] / sum
