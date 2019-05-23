@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu May 23 21:41:47 2019
+
+@author: tushar
+"""
+
+
+import numpy as np
+import math
+import matplotlib.pyplot as plt
+
+
+N = 100    # no of I.I.Ds to be generated
+
+# Part A : Creating n i.i.ds  => Gaussian(mean,std_dev)
+Lambda = 7
+X = np.random.exponential(1/Lambda,N)
+
+
+# n = known = t
+# p = unknown
+P = np.arange(3,11,0.2)
+L = []
+for p in P:
+    lp = 1
+    for xi in X:
+        lp *= p*(math.exp(-p*xi))
+    L.append(lp)
+plt.plot(P,L)
+
+p_max = np.argmax(L)
+print(P[p_max])
+
+plt.axvline(P[p_max],color='r',ls='dashed',label=str(P[p_max]))
+plt.legend()
+plt.grid()
+plt.show()
