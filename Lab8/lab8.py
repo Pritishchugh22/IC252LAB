@@ -1,13 +1,13 @@
 #importing the required libraries
 import numpy as np
-import scipy.stats
+import scipy.stats as st
 import matplotlib.pyplot as plt
 
 
-norm = scipy.stats.norm(0, 1).pdf #pdf function of Gaussian distribution
-cdf = scipy.stats.norm(0, 1).cdf
+norm = st.norm(0, 1).pdf #pdf function of Gaussian distribution
+cdf = st.norm(0, 1).cdf
 
-ppf = scipy.stats.norm.ppf#inverse function of gaussian distribution
+ppf = st.norm.ppf#inverse function of gaussian distribution
 
 a,b=map(int,input("Enter the boundaries of interval(a&b):\n").split())
 

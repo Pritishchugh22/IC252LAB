@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as stats
 sample=[np.sum(np.random.poisson(5,100)) for i in range(1000)]
-sample2=[(i-100*5)/(10/np.sqrt(5)) for i in sample ]
+sample2=[(i-100*5)/(10*np.sqrt(5)) for i in sample ]
 sample3=[i/100 for i in sample]
 
 E_X_bar=mu=np.mean(sample3)
@@ -25,7 +25,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as stats
 sample=[np.sum(np.random.uniform(0,1,100)) for i in range(1000)]
-sample2=[(i-100*0.5)/(10/np.sqrt(12)) for i in sample ]
+sample2=[(i-100*0.5)/(10*(1/np.sqrt(12))) for i in sample ]
 sample3=[i/100 for i in sample]
 
 E_X_bar=mu=np.mean(sample3)
@@ -50,7 +50,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 sample=[np.sum(np.random.exponential(1/3,100)) for i in range(1000)]
-sample2=[(i-100*0.33)/(10/3) for i in sample ]
+sample2=[(i-100*0.33)/(10*(1/3)) for i in sample]
 sample3=[i/100 for i in sample]
 
 E_X_bar=np.mean(sample3)
