@@ -1,2 +1,2 @@
 # IC252LAB
-Lab assignments
+Lab assignments of Data Science 2
